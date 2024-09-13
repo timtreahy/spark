@@ -1,0 +1,217 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="manchester.spark.ui.SignInScreen"
+    >
+    <!--Composite Logo-->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/compositeLogo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <!--Accent Oval-->
+<!--        <View-->
+<!--            android:id="@+id/accentOval"-->
+<!--            android:layout_width="135.71dp"-->
+<!--            android:layout_height="278.57dp"-->
+<!--            android:background="@drawable/default_circle"-->
+<!--            android:backgroundTint="@color/white"-->
+<!--            app:layout_constraintBottom_toBottomOf="@+id/foregroundLogoOval"-->
+<!--            app:layout_constraintEnd_toEndOf="@+id/foregroundLogoOval"-->
+<!--            app:layout_constraintHorizontal_bias="0.5"-->
+<!--            app:layout_constraintStart_toStartOf="@+id/foregroundLogoOval"-->
+<!--            app:layout_constraintTop_toTopOf="@+id/foregroundLogoOval"-->
+<!--            app:layout_constraintVertical_bias="0.5" />-->
+
+        <!--Foreground Oval-->
+<!--        <View-->
+<!--            android:id="@+id/foregroundLogoOval"-->
+<!--            android:layout_width="103.57dp"-->
+<!--            android:layout_height="139.28dp"-->
+<!--            android:layout_marginTop="-250dp"-->
+<!--            android:background="@drawable/gradient_1"-->
+<!--            app:layout_constraintBottom_toBottomOf="parent"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toTopOf="parent" />-->
+        <View
+            android:id="@+id/logoDrawable"
+            android:layout_width="200dp"
+            android:layout_height="300dp"
+            android:background="@drawable/spark_logo_white"
+            android:backgroundTint="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!--Logo Text-->
+<!--        <TextView-->
+<!--            android:id="@+id/logoText"-->
+<!--            android:layout_width="246.42dp"-->
+<!--            android:layout_height="246.42dp"-->
+<!--            android:text="@string/PLACEHOLDER"-->
+<!--            android:textAlignment="center"-->
+<!--            android:shadowColor="@color/black"-->
+<!--            android:shadowRadius="20"-->
+<!--            android:textSize="178.57sp"-->
+<!--            android:textStyle="bold|italic"-->
+<!--            app:layout_constraintBottom_toBottomOf="@+id/foregroundLogoOval"-->
+<!--            app:layout_constraintEnd_toEndOf="@+id/foregroundLogoOval"-->
+<!--            app:layout_constraintHorizontal_bias="0.5"-->
+<!--            app:layout_constraintStart_toStartOf="@+id/foregroundLogoOval"-->
+<!--            app:layout_constraintTop_toTopOf="@+id/foregroundLogoOval"-->
+<!--            app:layout_constraintVertical_bias="0.5" />-->
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <!--End of Composite Logo-->
+    <!--Sign in as Auth-->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/signInAuth"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="100dp"
+        app:layout_constraintStart_toStartOf="parent"
+        >
+
+        <!--Google Auth-->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/googleAuth"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/appleAuth"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <View
+                android:id="@+id/googleAuthBackground"
+                android:layout_width="90dp"
+                android:layout_height="40dp"
+                android:background="@drawable/rounded_button_gradient_1"
+                android:backgroundTint="@color/white"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <View
+                android:id="@+id/googleAuthIcon"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:background="@drawable/google_logo"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        <!--Apple Auth-->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/appleAuth"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/facebookAuth"
+            app:layout_constraintStart_toEndOf="@+id/googleAuth"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <View
+                android:id="@+id/appleAuthBackground"
+                android:layout_width="90dp"
+                android:layout_height="40dp"
+                android:background="@drawable/rounded_button_gradient_1"
+                android:backgroundTint="@color/black"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <View
+                android:id="@+id/appleAuthIcon"
+                android:layout_width="20dp"
+                android:layout_height="25dp"
+                android:background="@drawable/apple_logo"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        <!--Facebook Auth-->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/facebookAuth"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/appleAuth"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <View
+                android:id="@+id/facebookAuthBackground"
+                android:layout_width="90dp"
+                android:layout_height="40dp"
+                android:background="@drawable/rounded_button_gradient_1"
+                android:backgroundTint="#1877f2"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <View
+                android:id="@+id/facebookAuthIcon"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:background="@drawable/facebook_logo"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <!--End of Sign in as Auth-->
+    <!--Sign in as Guest-->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/signInGuest"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/signInAuth">
+
+
+        <TextView
+            android:id="@+id/signInGuestText"
+            android:layout_width="150dp"
+            android:layout_height="20dp"
+            android:fontFamily="serif"
+            android:lineSpacingExtra="-12sp"
+            android:shadowColor="@color/black"
+            android:shadowRadius="10"
+            android:text="Sign in as guest"
+            android:textAlignment="center"
+            android:textColor="#CCFFFFFF"
+            android:textSize="14dp"
+            android:textStyle="bold"
+            app:flow_verticalAlign="top"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <!--End of Sign in as Guest-->
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

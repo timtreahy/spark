@@ -1,0 +1,29 @@
+<resources>
+    <string name="CARD">🃏</string>
+    <string name="DAY_NIGHT">🌞\n🌚</string>
+    <string name="DEATH">💀️</string>
+    <string name="DEFAULT_COMMANDER_DAMAGE_HELPER_TEXT">Commander\ndamage</string>
+    <string name="DEFAULT_LIFE_CHANGE">-99</string>
+    <string name="DEFAULT_LIFE_TOTAL">999</string>
+    <string name="DICE">🎲</string>
+    <string name="EVENT_LOG">📝</string>
+    <string name="FORTY">40</string>
+    <string name="FOUR">4</string>
+    <string name="HOME">🏠</string>
+    <string name="INFECT_DAMAGE_HELPER_TEXT">Infect\ndamage</string>
+    <string name="INITIATIVE">🧭</string>
+    <string name="LIFE_ICON">♥️</string>
+    <string name="LIFE_TOTAL_HELPER_TEXT">Life\ntotal</string>
+    <string name="MONARCH">👑</string>
+    <string name="ONE">1</string>
+    <string name="ONE_HUNDRED">100</string>
+    <string name="PLACEHOLDER">✨</string>
+    <string name="PLAYER_ICON">👥</string>
+    <string name="START">START</string>
+    <string name="TEN">10</string>
+    <string name="THIRTY">30</string>
+    <string name="THREE">3</string>
+    <string name="TWENTY">20</string>
+    <string name="TWENTY_ONE">21</string>
+    <string name="TWO">2</string>
+</resources>

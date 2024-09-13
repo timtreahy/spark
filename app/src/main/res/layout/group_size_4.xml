@@ -1,0 +1,473 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/playerGroupSize4"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/black"
+    android:clickable="false"
+    tools:context="manchester.spark.ui.GameActivity">
+    <!--Upper Pair-->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/upperPair"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:clickable="false"
+        app:layout_constraintBottom_toTopOf="@id/lowerPair"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_default="percent"
+        app:layout_constraintHeight_percent="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+        <!--Player 1 Drawer-->
+        <include
+            android:id="@+id/player1_Drawer"
+            layout="@layout/player_drawer_1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/player2_Drawer"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+        <!--End of Player 1 Drawer-->
+        <!--Player 2 Drawer-->
+        <include
+            android:id="@+id/player2_Drawer"
+            layout="@layout/player_drawer_2"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/player1_Drawer"
+            app:layout_constraintTop_toTopOf="parent" />
+        <!--End of Player 2 Drawer-->
+        <!-- Upper Quick Action Group -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/upperQuickActionGroup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+            <!-- Day and Night Indicator -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/dayNightIndicator"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="visible"
+                app:layout_constraintBottom_toTopOf="@id/initiativeIndicator"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+                <!--Accent Oval-->
+
+                <!--Foreground Oval-->
+                <View
+                    android:id="@+id/dayNightIndicatorAccent"
+                    android:layout_width="10dp"
+                    android:layout_height="10dp"
+                    android:background="@drawable/default_circle"
+                    android:backgroundTint="@color/black"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <!--Logo Text-->
+                <TextView
+                    android:id="@+id/dayNightIndicatorText"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:gravity="center"
+                    android:rotation="90"
+                    android:text="@string/DAY_NIGHT"
+                    android:textAlignment="center"
+                    android:textColor="@color/manchester_pink"
+                    android:textSize="20sp"
+                    android:visibility="invisible"
+                    app:layout_constraintBottom_toBottomOf="@+id/dayNightIndicatorAccent"
+                    app:layout_constraintEnd_toEndOf="@+id/dayNightIndicatorAccent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="@+id/dayNightIndicatorAccent"
+                    app:layout_constraintTop_toTopOf="@+id/dayNightIndicatorAccent"
+                    app:layout_constraintVertical_bias="0.5" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+            <!-- End of Day and Night Indicator -->
+            <!-- Initiative Indicator -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/initiativeIndicator"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="visible"
+                app:layout_constraintBottom_toTopOf="@id/monarchIndicator"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/dayNightIndicator">
+
+
+                <!--Foreground Oval-->
+                <View
+                    android:id="@+id/initiativeIndicatorAccent"
+                    android:layout_width="10dp"
+                    android:layout_height="10dp"
+                    android:background="@drawable/default_circle"
+                    android:backgroundTint="@color/black"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <!--Logo Text-->
+                <TextView
+                    android:id="@+id/initiativeIndicatorText"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:gravity="center"
+                    android:rotation="90"
+                    android:text="@string/INITIATIVE"
+                    android:textAlignment="center"
+                    android:textColor="@color/manchester_pink"
+                    android:textSize="20sp"
+                    android:visibility="invisible"
+                    app:layout_constraintBottom_toBottomOf="@+id/initiativeIndicatorAccent"
+                    app:layout_constraintEnd_toEndOf="@+id/initiativeIndicatorAccent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="@+id/initiativeIndicatorAccent"
+                    app:layout_constraintTop_toTopOf="@+id/initiativeIndicatorAccent"
+                    app:layout_constraintVertical_bias="0.5" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+            <!-- End of Initiative Indicator -->
+            <!-- Monarch Indicator -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/monarchIndicator"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="visible"
+                app:layout_constraintBottom_toTopOf="@id/deathIndicator"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/initiativeIndicator">
+
+                <!--Foreground Oval-->
+                <View
+                    android:id="@+id/monarchIndicatorAccent"
+                    android:layout_width="10dp"
+                    android:layout_height="10dp"
+                    android:background="@drawable/default_circle"
+                    android:backgroundTint="@color/black"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <!--Logo Text-->
+                <TextView
+                    android:id="@+id/monarchIndicatorText"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:gravity="center"
+                    android:rotation="90"
+                    android:text="@string/MONARCH"
+                    android:textAlignment="center"
+                    android:textSize="20sp"
+                    android:visibility="invisible"
+                    app:layout_constraintBottom_toBottomOf="@+id/monarchIndicatorAccent"
+                    app:layout_constraintEnd_toEndOf="@+id/monarchIndicatorAccent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="@+id/monarchIndicatorAccent"
+                    app:layout_constraintTop_toTopOf="@+id/monarchIndicatorAccent"
+                    app:layout_constraintVertical_bias="0.5" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+            <!--End of Monarch Indicator-->
+            <!-- Player Death Indicator -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/deathIndicator"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="visible"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/monarchIndicator">
+
+                <!--Foreground Oval-->
+                <View
+                    android:id="@+id/deathIndicatorAccent"
+                    android:layout_width="10dp"
+                    android:layout_height="10dp"
+                    android:background="@drawable/default_circle"
+                    android:backgroundTint="@color/black"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <!--Logo Text-->
+                <TextView
+                    android:id="@+id/deathIndicatorText"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:gravity="center"
+                    android:rotation="90"
+                    android:text="@string/DEATH"
+                    android:textAlignment="center"
+                    android:textSize="20sp"
+                    android:visibility="invisible"
+                    app:layout_constraintBottom_toBottomOf="@+id/deathIndicatorAccent"
+                    app:layout_constraintEnd_toEndOf="@+id/deathIndicatorAccent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="@+id/deathIndicatorAccent"
+                    app:layout_constraintTop_toTopOf="@+id/deathIndicatorAccent"
+                    app:layout_constraintVertical_bias="0.5" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+            <!--End of Player Death Indicator-->
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        <!-- End of Upper Quick Action Group -->
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <!-- End of Upper Pair -->
+    <!-- Lower Pair -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/lowerPair"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="0.5"
+        app:layout_constraintHeight_default="percent"
+        app:layout_constraintTop_toBottomOf="@+id/upperPair"
+        app:layout_constraintStart_toStartOf="parent">
+        <!--Player 3 Drawer-->
+        <include
+            android:id="@+id/player3_Drawer"
+            layout="@layout/player_drawer_3"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/player4_Drawer"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+        <!--End of Player 3 Drawer-->
+        <!--Player 4 Drawer-->
+        <include
+            android:id="@+id/player4_Drawer"
+            layout="@layout/player_drawer_4"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/player3_Drawer"
+            app:layout_constraintTop_toTopOf="parent" />
+        <!--End of Player 4 Drawer-->
+        <!-- Lower Quick Action Group -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/lowerQuickActionGroup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+            <!-- Card Search Indicator -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/cardSearchIndicator"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="visible"
+                app:layout_constraintBottom_toTopOf="@id/diceIndicator"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <!--Foreground Oval-->
+                <View
+                    android:id="@+id/cardSearchIndicatorAccent"
+                    android:layout_width="10dp"
+                    android:layout_height="10dp"
+                    android:background="@drawable/default_circle"
+                    android:backgroundTint="@color/black"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <!--Logo Text-->
+                <TextView
+                    android:id="@+id/cardSearchIndicatorText"
+                    android:layout_width="90dp"
+                    android:layout_height="60dp"
+                    android:gravity="center"
+                    android:rotation="90"
+                    android:text="@string/CARD"
+                    android:textAlignment="center"
+                    android:textColor="@color/manchester_pink"
+                    android:textSize="20sp"
+                    android:visibility="invisible"
+                    app:layout_constraintBottom_toBottomOf="@+id/cardSearchIndicatorAccent"
+                    app:layout_constraintEnd_toEndOf="@+id/cardSearchIndicatorAccent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="@+id/cardSearchIndicatorAccent"
+                    app:layout_constraintTop_toTopOf="@+id/cardSearchIndicatorAccent"
+                    app:layout_constraintVertical_bias="0.5" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+            <!-- End of Card Search Indicator -->
+            <!-- Dice Indicator -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/diceIndicator"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="visible"
+                app:layout_constraintBottom_toTopOf="@id/gameLogIndicator"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/cardSearchIndicator">
+
+                <!--Foreground Oval-->
+                <View
+                    android:id="@+id/diceIndicatorAccent"
+                    android:layout_width="10dp"
+                    android:layout_height="10dp"
+                    android:background="@drawable/default_circle"
+                    android:backgroundTint="@color/black"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <!--Logo Text-->
+                <TextView
+                    android:id="@+id/diceIndicatorText"
+                    android:layout_width="90dp"
+                    android:layout_height="60dp"
+                    android:gravity="center"
+                    android:rotation="90"
+                    android:text="@string/DICE"
+                    android:textAlignment="center"
+                    android:textColor="@color/manchester_pink"
+                    android:textSize="20sp"
+                    android:visibility="invisible"
+                    app:layout_constraintBottom_toBottomOf="@+id/diceIndicatorAccent"
+                    app:layout_constraintEnd_toEndOf="@+id/diceIndicatorAccent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="@+id/diceIndicatorAccent"
+                    app:layout_constraintTop_toTopOf="@+id/diceIndicatorAccent"
+                    app:layout_constraintVertical_bias="0.5" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+            <!-- End of Dice Indicator -->
+            <!-- Game Log Indicator -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/gameLogIndicator"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="visible"
+                app:layout_constraintBottom_toTopOf="@id/homeIndicator"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/diceIndicator">
+
+                <!--Foreground Oval-->
+                <View
+                    android:id="@+id/gameLogIndicatorAccent"
+                    android:layout_width="10dp"
+                    android:layout_height="10dp"
+                    android:background="@drawable/default_circle"
+                    android:backgroundTint="@color/black"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <!--Logo Text-->
+                <TextView
+                    android:id="@+id/gameLogIndicatorText"
+                    android:layout_width="90dp"
+                    android:layout_height="60dp"
+                    android:gravity="center"
+                    android:rotation="90"
+                    android:text="@string/EVENT_LOG"
+                    android:textAlignment="center"
+                    android:textColor="@color/manchester_pink"
+                    android:textSize="20sp"
+                    android:visibility="invisible"
+                    app:layout_constraintBottom_toBottomOf="@+id/gameLogIndicatorAccent"
+                    app:layout_constraintEnd_toEndOf="@+id/gameLogIndicatorAccent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="@+id/gameLogIndicatorAccent"
+                    app:layout_constraintTop_toTopOf="@+id/gameLogIndicatorAccent"
+                    app:layout_constraintVertical_bias="0.5" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+            <!--End of Game Log Indicator-->
+            <!-- Home Indicator -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/homeIndicator"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/gameLogIndicator">
+
+                <!--Foreground Oval-->
+                <View
+                    android:id="@+id/homeIndicatorAccent"
+                    android:layout_width="10dp"
+                    android:layout_height="10dp"
+                    android:background="@drawable/default_circle"
+                    android:backgroundTint="@color/black"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <!--Logo Text-->
+                <TextView
+                    android:id="@+id/homeIndicatorText"
+                    android:layout_width="90dp"
+                    android:layout_height="60dp"
+                    android:fontFamily="monospace"
+                    android:gravity="center"
+                    android:rotation="90"
+                    android:text="@string/HOME"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:textSize="20sp"
+                    android:visibility="invisible"
+                    app:layout_constraintBottom_toBottomOf="@+id/homeIndicatorAccent"
+                    app:layout_constraintEnd_toEndOf="@+id/homeIndicatorAccent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="@+id/homeIndicatorAccent"
+                    app:layout_constraintTop_toTopOf="@+id/homeIndicatorAccent"
+                    app:layout_constraintVertical_bias="0.5" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+            <!-- End of Home Indicator -->
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        <!-- End of Lower Quick Action Group -->
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <!-- End of Lower Pair -->
+    <!-- Composite Logo -->
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:rotation="90"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <include
+            android:id="@+id/compositeLogo"
+            layout="@layout/composite_logo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </FrameLayout>
+    <!-- End of Composite Logo -->
+</androidx.constraintlayout.widget.ConstraintLayout>

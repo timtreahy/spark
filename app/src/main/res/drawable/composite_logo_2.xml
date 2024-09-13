@@ -1,0 +1,29 @@
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:width="48dp"
+        android:height="48dp"
+        android:gravity="center">
+
+        <shape android:shape="rectangle">
+            <solid android:color="@android:color/transparent" />
+        </shape>
+    </item>
+    <item
+        android:drawable="@drawable/gradient_3"
+        android:gravity="center" />
+    <item
+        android:width="48dp"
+        android:height="48dp"
+        android:bottom="30dp"
+        android:drawable="@drawable/circular_logo_inverted"
+        android:gravity="center"
+        android:left="30dp"
+        android:right="30dp"
+        android:top="30dp" />
+
+    <item
+        android:width="39.42dp"
+        android:height="39.42dp"
+        android:drawable="@drawable/sparkles_emoji"
+        android:gravity="center" />
+</layer-list>

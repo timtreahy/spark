@@ -1,0 +1,41 @@
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:width="48dp"
+        android:height="48dp"
+        android:gravity="center">
+
+        <shape android:shape="rectangle">
+            <solid android:color="@android:color/transparent" />
+        </shape>
+    </item>
+    <item
+        android:drawable="@color/manchester_black"
+        android:gravity="center" />
+    <item
+        android:width="48dp"
+        android:height="48dp"
+        android:bottom="30dp"
+        android:drawable="@drawable/circular_logo"
+        android:gravity="center"
+        android:left="30dp"
+        android:right="30dp"
+        android:top="30dp" />
+    <item
+        android:bottom="0dp"
+        android:left="0dp"
+        android:right="0dp"
+        android:top="0dp">
+    <shape>
+        <solid android:color="@android:color/white" />
+        <gradient
+            android:angle="45"
+            android:endColor="@color/manchester_blue"
+            android:startColor="@color/manchester_purple" />
+    </shape>
+    </item>
+    <item
+        android:width="30dp"
+        android:height="48dp"
+        android:drawable="@drawable/spark_logo_white"
+        android:gravity="center" />
+</layer-list>

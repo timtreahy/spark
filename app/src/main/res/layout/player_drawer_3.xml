@@ -1,0 +1,412 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/rounded_player_card"
+    android:backgroundTint="@color/white"
+    android:clickable="false">
+
+    <!--Drawer Gutter-->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/drawerGutter"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/rounded_player_card"
+        android:backgroundTint="@color/white"
+        android:clickable="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <!--End of Drawer Gutter-->
+    <!--Drawer Bottom Accent-->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/drawerBottomAccent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginBottom="15dp"
+        android:background="@drawable/rounded_player_card"
+        android:backgroundTint="@color/manchester_blue"
+        android:clickable="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <!--End of Drawer Bottom Accent-->
+    <!--Drawer Barrier-->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/drawerLidBarrier"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:backgroundTint="@color/transparent"
+        android:clickable="false"
+        app:layout_constraintTop_toBottomOf="@+id/drawerLid"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
+    <!--End of Drawer Barrier-->
+
+    <!--Drawer Lid-->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/drawerLid"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/rounded_player_card"
+        android:backgroundTint="@color/white"
+        android:clickable="false"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent=".5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/drawerLidBarrier">
+        <!--Player Drawer Change Turn Indicator-->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/drawerTurnChangeIndicator"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <View
+                android:id="@+id/drawerTurnChangeElement"
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:background="@drawable/default_circle"
+                android:backgroundTint="@color/white"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        <!--End of Player Drawer Change Turn Indicator-->
+
+        <!--Life Total Widget-->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/lifeTotal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintBottom_toTopOf="@+id/primaryCommanderDamage"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/drawerHandle">
+
+            <!--Life Total Widget-->
+            <FrameLayout
+                android:id="@+id/drawerLifeTotalWidget"
+                android:layout_width="wrap_content"
+                android:layout_height="140dp"
+                android:clickable="false"
+                android:rotation="90"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <include layout="@layout/life_total_widget" />
+            </FrameLayout>
+            <!--Touch Zones-->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/lifeTotalTouchZones"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:clickable="false"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="parent">
+                <!--Upper Touch Zone-->
+                <FrameLayout
+                    android:id="@+id/lowerLifeTotalTouchZone"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:backgroundTint="@color/transparent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/upperLifeTotalTouchZone"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+                <!--End of Upper Touch Zone-->
+                <!--Upper Touch Zone-->
+                <FrameLayout
+                    android:id="@+id/upperLifeTotalTouchZone"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:backgroundTint="@color/transparent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/lowerLifeTotalTouchZone"
+                    app:layout_constraintTop_toTopOf="parent" />
+                <!--End of Upper Touch Zone-->
+            </androidx.constraintlayout.widget.ConstraintLayout>
+            <!--End of Touch Zones-->
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        <!--End of Life Total Widget-->
+        <View
+            android:id="@+id/lifeToPrimaryDivider"
+            android:layout_width="150dp"
+            android:layout_height="3dp"
+            android:background="@drawable/simple_divider_line_horizontal"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/primaryCommanderDamage"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/lifeTotal" />
+        <!--Primary Damage Widget-->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/primaryCommanderDamage"
+            android:layout_width="match_parent"
+            android:layout_height="90dp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/secondaryCommanderDamage"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/lifeTotal">
+
+            <!--Primary Damage Widget-->
+            <FrameLayout
+                android:id="@+id/drawerPrimaryCommanderDamageWidget"
+                android:layout_width="wrap_content"
+                android:layout_height="140dp"
+                android:clickable="false"
+                android:rotation="90"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <include layout="@layout/commander_damage_widget" />
+            </FrameLayout>
+            <!--Touch Zones-->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/primaryCommanderDamageTouchZones"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:clickable="false"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+                <!--Upper Touch Zone-->
+                <FrameLayout
+                    android:id="@+id/lowerPrimaryCommanderDamageTouchZone"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:backgroundTint="@color/transparent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/upperPrimaryCommanderDamageTouchZone"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+                <!--End of Upper Touch Zone-->
+                <!--Upper Touch Zone-->
+                <FrameLayout
+                    android:id="@+id/upperPrimaryCommanderDamageTouchZone"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:backgroundTint="@color/transparent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/lowerPrimaryCommanderDamageTouchZone"
+                    app:layout_constraintTop_toTopOf="parent" />
+                <!--End of Upper Touch Zone-->
+            </androidx.constraintlayout.widget.ConstraintLayout>
+            <!--End of Touch Zones-->
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        <!--End of Primary Damage Widget-->
+        <View
+            android:id="@+id/primaryToSecondaryDivider"
+            android:layout_width="150dp"
+            android:layout_height="3dp"
+            android:background="@drawable/simple_divider_line_horizontal"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/secondaryCommanderDamage"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/primaryCommanderDamage" />
+        <!--Secondary Damage Widget-->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/secondaryCommanderDamage"
+            android:layout_width="match_parent"
+            android:layout_height="90dp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/infectDamage"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/primaryCommanderDamage">
+
+            <!--Secondary Damage Widget-->
+            <FrameLayout
+                android:id="@+id/drawerSecondaryCommanderDamageWidget"
+                android:layout_width="wrap_content"
+                android:layout_height="140dp"
+                android:clickable="false"
+                android:rotation="90"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <include layout="@layout/commander_damage_widget" />
+            </FrameLayout>
+            <!--Touch Zones-->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/secondaryCommanderDamageTouchZones"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:clickable="false"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+                <!--Upper Touch Zone-->
+                <FrameLayout
+                    android:id="@+id/lowerSecondaryCommanderDamageTouchZone"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:backgroundTint="@color/transparent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/upperSecondaryCommanderDamageTouchZone"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+                <!--End of Upper Touch Zone-->
+                <!--Upper Touch Zone-->
+                <FrameLayout
+                    android:id="@+id/upperSecondaryCommanderDamageTouchZone"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:backgroundTint="@color/transparent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/lowerSecondaryCommanderDamageTouchZone"
+                    app:layout_constraintTop_toTopOf="parent" />
+                <!--End of Upper Touch Zone-->
+            </androidx.constraintlayout.widget.ConstraintLayout>
+            <!--End of Touch Zones-->
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        <!--End of Secondary Damage Widget-->
+        <View
+            android:id="@+id/secondaryToInfectDivider"
+            android:layout_width="150dp"
+            android:layout_height="3dp"
+            android:background="@drawable/simple_divider_line_horizontal"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/infectDamage"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/secondaryCommanderDamage" />
+        <!--Infect Damage Widget-->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/infectDamage"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/bottomSpacer"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/secondaryCommanderDamage">
+
+            <!--Infect Damage Widget-->
+            <FrameLayout
+                android:id="@+id/drawerInfectDamageWidget"
+                android:layout_width="wrap_content"
+                android:layout_height="140dp"
+                android:clickable="false"
+                android:rotation="90"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <include layout="@layout/infect_damage_widget" />
+            </FrameLayout>
+            <!--Touch Zones-->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/infectDamageTouchZones"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:clickable="false"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+                <!--Upper Touch Zone-->
+                <FrameLayout
+                    android:id="@+id/lowerInfectDamageTouchZone"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:backgroundTint="@color/transparent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/upperInfectDamageTouchZone"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+                <!--End of Upper Touch Zone-->
+                <!--Upper Touch Zone-->
+                <FrameLayout
+                    android:id="@+id/upperInfectDamageTouchZone"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:backgroundTint="@color/transparent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/lowerInfectDamageTouchZone"
+                    app:layout_constraintTop_toTopOf="parent" />
+                <!--End of Upper Touch Zone-->
+            </androidx.constraintlayout.widget.ConstraintLayout>
+            <!--End of Touch Zones-->
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        <!--End of Infect Damage Widget-->
+        <View
+            android:id="@+id/bottomSpacer"
+            android:layout_width="wrap_content"
+            android:layout_height="27dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+        <!--Player 1 Drawer Handle-->
+        <include
+            android:id="@+id/drawerHandle"
+            layout="@layout/drawer_handle_flipped"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintWidth_percent=".5" />
+        <!--End of Player 1 Drawer Handle-->
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <!--End of Drawer Lid-->
+    <View
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@drawable/rounded_corner"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@drawable/rounded_corner"
+        android:rotation="90"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@drawable/rounded_corner"
+        android:rotation="270"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <View
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@drawable/rounded_corner"
+        android:rotation="180"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

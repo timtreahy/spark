@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="Spark"
+        android:roundIcon="@mipmap/ic_launcher"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Manchester"
+        tools:targetApi="31">
+        <activity
+            android:name="manchester.spark.ui.MainActivity"
+            android:exported="true"
+            android:theme="@android:style/Theme.Holo.Light.NoActionBar.Fullscreen"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="manchester.spark.ui.SignInScreen"
+            android:exported="true"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.SIGNIN" />
+                <category android:name="android.intent.category.SIGNIN" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="manchester.spark.ui.SplashScreen"
+            android:exported="true"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.SPLASH" />
+                <category android:name="android.intent.category.SPLASH" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="manchester.spark.ui.GameModeScreen"
+            android:exported="true"
+            android:windowSoftInputMode="adjustResize"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.GAMEMODES" />
+                <category android:name="android.intent.category.GAMEMODES" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="manchester.spark.ui.LobbyScreen"
+            android:exported="true"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.OPENLOBBY" />
+                <category android:name="android.intent.category.OPENLOBBY" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="manchester.spark.ui.GameActivity"
+            android:exported="true"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.GAME" />
+                <category android:name="android.intent.category.GAME" />
+            </intent-filter>
+        </activity>
+    </application>
+</manifest>

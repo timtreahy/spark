@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <color name="black">#000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="transparent">#80000000</color>
+    <color name="manchester_black">#332F2F</color>
+    <color name="manchester_pink">#f5429e</color>
+    <color name="manchester_blue">#4269F5</color>
+    <color name="manchester_green">#4CAF50</color>
+    <color name="manchester_yellow">#FFC107</color>
+    <color name="manchester_orange">#FF5722</color>
+    <color name="manchester_red">#E91E63</color>
+    <color name="manchester_white">#FFEDED</color>
+    <color name="manchester_purple">#5E1DD3</color>
+    <color name="player1_color">#4269F5</color>
+    <color name="player2_color">#4CAF50</color>
+    <color name="player3_color">#FFC107</color>
+    <color name="player4_color">#FF5722</color>
+</resources>

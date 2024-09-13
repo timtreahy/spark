@@ -1,0 +1,128 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="manchester.spark.ui.SplashScreen"
+    >
+    <!--Player Profile User Icon-->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/playerProfile_userIcon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <View
+            android:id="@+id/playerProfile_userIconImage"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/default_circle"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/playerProfile_userIconText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="monospace"
+            android:text="T"
+            android:textColor="@color/black"
+            android:textSize="30dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <!--End of Player Profile User Icon-->
+
+    <!--Player Profile Name-->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/playerProfile_userName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        app:layout_constraintBottom_toBottomOf="@id/playerProfile_userIcon"
+        app:layout_constraintStart_toEndOf="@id/playerProfile_userIcon"
+        app:layout_constraintTop_toTopOf="@id/playerProfile_userIcon">
+
+        <TextView
+            android:id="@+id/playerProfile_userNameText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="monospace"
+            android:text="ttreahy"
+            android:shadowColor="@color/black"
+            android:shadowRadius="10"
+            android:textColor="@color/white"
+            android:textSize="12dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <!--End of Player Profile Name-->
+
+    <!--Composite Logo-->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/play"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <!--Accent Oval-->
+        <View
+            android:id="@+id/accentOval"
+            android:layout_width="130dp"
+            android:layout_height="130dp"
+            android:background="@drawable/gradient_10"
+            app:layout_constraintBottom_toBottomOf="@+id/foregroundLogoOval"
+            app:layout_constraintEnd_toEndOf="@+id/foregroundLogoOval"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="@+id/foregroundLogoOval"
+            app:layout_constraintTop_toTopOf="@+id/foregroundLogoOval"
+            app:layout_constraintVertical_bias="0.5" />
+
+        <!--Foreground Oval-->
+        <View
+            android:id="@+id/foregroundLogoOval"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_marginTop="-250dp"
+            android:background="@drawable/gradient_1"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <!--Logo Text-->
+        <TextView
+            android:id="@+id/logoText2"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif"
+            android:text="PLAY"
+            android:textAlignment="center"
+            android:letterSpacing=".01"
+            android:shadowColor="@color/black"
+            android:shadowRadius="10"
+            android:textColor="@color/white"
+            android:textSize="30sp"
+            android:textStyle="bold|italic"
+            app:layout_constraintBottom_toBottomOf="@+id/foregroundLogoOval"
+            app:layout_constraintEnd_toEndOf="@+id/foregroundLogoOval"
+            app:layout_constraintStart_toStartOf="@+id/foregroundLogoOval"
+            app:layout_constraintTop_toTopOf="@+id/foregroundLogoOval" />
+        <!--Logo Text-->
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <!--End of Composite Logo-->
+</androidx.constraintlayout.widget.ConstraintLayout>

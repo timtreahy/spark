@@ -1,0 +1,162 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:id="@+id/gameModeScreen"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:layout_marginStart="10dp"
+            android:shadowRadius="10"
+            android:shadowColor="@color/black"
+            android:text="↩"
+            android:textSize="60dp"
+            android:backgroundTint="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/createGame"
+        app:layout_constraintBottom_toTopOf="@+id/joinGame"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+        <TextView
+            android:id="@+id/selectModeText"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="serif"
+            android:lineSpacingExtra="-12sp"
+            android:shadowColor="@color/black"
+            android:shadowRadius="10"
+            android:text="Select mode"
+            android:textAlignment="center"
+            android:layout_marginBottom="20dp"
+            android:textColor="#CCFFFFFF"
+            android:textSize="14dp"
+            android:textStyle="bold"
+            app:flow_verticalAlign="top"
+            app:layout_constraintBottom_toTopOf="@+id/unrankedLocal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+        <include
+            android:id="@+id/unrankedLocal"
+            layout="@layout/unranked_classic_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toTopOf="@+id/unrankedParty"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/selectModeText" />
+
+        <include
+            android:id="@+id/unrankedParty"
+            layout="@layout/unranked_party_mode_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            app:layout_constraintBottom_toTopOf="@+id/rankedOnlineCompetitive"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/unrankedLocal" />
+
+        <include
+            android:id="@+id/rankedOnlineCompetitive"
+            layout="@layout/ranked_deck_rating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/unrankedParty" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/joinGame"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/createGame">
+        <TextView
+            android:id="@+id/joinGameHelperText"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="serif"
+            android:shadowColor="@color/black"
+            android:shadowRadius="10"
+            android:text="Join a game"
+            android:textAlignment="center"
+            android:textColor="#CCFFFFFF"
+            android:textSize="14dp"
+            android:textStyle="bold"
+            app:flow_verticalAlign="top"
+            app:layout_constraintBottom_toTopOf="@+id/joinGameText"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/joinGameText"
+            android:layout_width="270dp"
+            android:layout_height="60dp"
+            android:fontFamily="monospace"
+            android:hint="Enter 4-letter code"
+            android:textColorHint="#8AFFFFFF"
+            android:textAlignment="center"
+            android:layout_marginTop="10dp"
+            android:shadowRadius="10"
+            android:shadowColor="@color/black"
+            android:background="@drawable/rounded_button_gradient_3"
+            android:backgroundTint="#83869BA1"
+            android:textColor="@color/white"
+            android:maxLength="4"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/joinGameHelperText"
+            />
+        <TextView
+            android:id="@+id/joinGameConfirmation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="monospace"
+            android:text="→"
+            android:visibility="invisible"
+            android:gravity="center"
+            android:shadowColor="@color/black"
+            android:shadowRadius="10"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:maxLength="4"
+            android:textSize="30sp"
+            android:layout_marginEnd="10dp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/joinGameHelperText"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
